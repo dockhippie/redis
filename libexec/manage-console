@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Usage: manage console
+# Summary: Run an interactive Redis shell
+# Help: This command is used to start an interactive Redis shell.
+set -e
+[[ -z $_MANAGE_ROOT ]] && exit 1
+
+if manage-running
+then
+  redis-cli $@
+else
+  echo "Server is not running"
+fi

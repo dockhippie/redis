@@ -7,8 +7,7 @@ These are docker images for Redis running on an
 ## Usage
 
 ```
-docker run -v /var/lib/redis --name redis-data busybox true
-docker run -p 6379:6379 -d --volumes-from redis-data --name redis webhippie/redis:latest start
+docker run -p 6379:6379 -d --name redis webhippie/redis:latest start
 
 # Execute this for further available commands
 docker exec -ti redis manage help

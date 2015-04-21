@@ -25,4 +25,4 @@ EXPOSE 6379
 
 WORKDIR /docker
 ENTRYPOINT ["manage"]
-CMD ["bash"]
+CMD ["start"]

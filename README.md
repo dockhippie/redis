@@ -44,7 +44,6 @@ Usage: manage <command> [<args>]
 Some useful manage commands are:
    bash      Start a shell on container
    commands  List all available sub commands
-   console   Run an interactive Redis shell
    pid       Return the process id of Redis
    prepare   Prepare environment
    running   Check if Redis is running

@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-# Usage: manage pid
-# Summary: Return the process id of Redis
-# Help: This command is used to gather the process id of the Redis server.
-set -e
-[[ -z $_MANAGE_ROOT ]] && exit 1
-
-pgrep -f redis-server

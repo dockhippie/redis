@@ -5,10 +5,10 @@ RUN apk add --update \
   redis && \
   rm -rf /var/cache/apk/*
 
-VOLUME ["/var/lib/redis", "/shared"]
+VOLUME ["/var/lib/redis"]
 
 ADD rootfs /
 EXPOSE 6379
 
 WORKDIR /root
-CMD ["/usr/bin/s6-svscan","/etc/s6"]
+CMD ["/usr/bin/s6-svscan", "/etc/s6"]

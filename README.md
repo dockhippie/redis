@@ -1,13 +1,17 @@
 # Redis
 
-These are docker images for Redis running on an
+[![](https://badge.imagelayers.io/webhippie/redis:latest.svg)](https://imagelayers.io/?images=webhippie/redis:latest 'Get your own badge on imagelayers.io')
+
+These are docker images for [Redis](http://redis.io) running on an
 [Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
 
 
 ## Usage
 
-```
-docker run -p 6379:6379 -d --name redis webhippie/redis:latest
+```bash
+docker run -ti \
+  --name redis \
+  webhippie/redis:latest
 ```
 
 
@@ -29,6 +33,20 @@ ENV REDIS_DATABASES 16
 ENV REDIS_MAXCONN 10000
 ENV REDIS_NOTIFYKS Elg
 ENV REDIS_OPTS
+```
+
+
+## Inherited environment variables
+
+```bash
+ENV LOGSTASH_ENABLED false
+ENV LOGSTASH_HOST logstash
+ENV LOGSTASH_PORT 5043
+ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
+ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
+ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
+ENV LOGSTASH_TIMEOUT 15
+ENV LOGSTASH_OPTS
 ```
 
 

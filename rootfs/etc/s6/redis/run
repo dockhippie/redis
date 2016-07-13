@@ -7,6 +7,13 @@ fi
 
 STARTCMD="/usr/bin/redis-server"
 
+if [[ -z "${REDIS_PROTECTED}" || "${REDIS_PROTECTED}" == "false" || "${REDIS_PROTECTED}" == "0" ]]
+then
+  STARTCMD="${STARTCMD} --protected-mode no"
+else
+  STARTCMD="${STARTCMD} --protected-mode yes"
+fi
+
 if [ -n "${REDIS_BACKLOG}" ]
 then
   STARTCMD="${STARTCMD} --tcp-backlog ${REDIS_BACKLOG}"

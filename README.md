@@ -6,20 +6,21 @@ These are docker images for [Redis](http://redis.io) running on an
 [Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
 
 
-## Usage
-
-```bash
-docker run -ti \
-  --name redis \
-  webhippie/redis:latest
-```
-
-
 ## Versions
 
 * [latest](https://github.com/dockhippie/redis/tree/master)
   available as ```webhippie/redis:latest``` at
   [Docker Hub](https://registry.hub.docker.com/u/webhippie/redis/)
+
+
+## Volumes
+
+* /var/lib/redis
+
+
+## Ports
+
+* 6379
 
 
 ## Available environment variables
@@ -32,6 +33,7 @@ ENV REDIS_LOGLEVEL notice
 ENV REDIS_DATABASES 16
 ENV REDIS_MAXCONN 10000
 ENV REDIS_NOTIFYKS Elg
+ENV REDIS_PROTECTED false
 ENV REDIS_OPTS
 ```
 
@@ -68,5 +70,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
 ```

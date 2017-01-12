@@ -1,16 +1,13 @@
 # Redis
 
-[![](https://badge.imagelayers.io/webhippie/redis:latest.svg)](https://imagelayers.io/?images=webhippie/redis:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/webhippie/redis.svg)](https://microbadger.com/images/webhippie/redis "Get your own image badge on microbadger.com")
 
-These are docker images for [Redis](http://redis.io) running on an
-[Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
+These are docker images for [Redis](http://redis.io) running on an [Alpine Linux container](https://registry.hub.docker.com/u/webhippie/alpine/).
 
 
 ## Versions
 
-* [latest](https://github.com/dockhippie/redis/tree/master)
-  available as ```webhippie/redis:latest``` at
-  [Docker Hub](https://registry.hub.docker.com/u/webhippie/redis/)
+* [latest](https://github.com/dockhippie/redis/tree/master) available as ```webhippie/redis:latest``` at [Docker Hub](https://registry.hub.docker.com/u/webhippie/redis/)
 
 
 ## Volumes
@@ -41,14 +38,7 @@ ENV REDIS_OPTS
 ## Inherited environment variables
 
 ```bash
-ENV LOGSTASH_ENABLED false
-ENV LOGSTASH_HOST logstash
-ENV LOGSTASH_PORT 5043
-ENV LOGSTASH_CA /etc/ssl/logstash/certs/ca.pem # As string or filename
-ENV LOGSTASH_CERT /etc/ssl/logstash/certs/cert.pem # As string or filename
-ENV LOGSTASH_KEY /etc/ssl/logstash/private/cert.pem # As string or filename
-ENV LOGSTASH_TIMEOUT 15
-ENV LOGSTASH_OPTS
+ENV CRON_ENABLED false
 ```
 
 
@@ -70,5 +60,5 @@ MIT
 ## Copyright
 
 ```
-Copyright (c) 2015-2016 Thomas Boerger <http://www.webhippie.de>
+Copyright (c) 2015-2017 Thomas Boerger <http://www.webhippie.de>
 ```

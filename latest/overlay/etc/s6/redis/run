@@ -1,0 +1,37 @@
+#!/bin/bash
+
+if [ -f ./setup ]
+then
+  source ./setup
+fi
+
+if [ -f ./custom ]
+then
+  source ./custom
+fi
+
+if [ -d ./custom.d ]
+then
+  for FILE in $(find ./custom.d -type f -iname *.sh | sort)
+  do
+    source ${FILE}
+  done
+fi
+
+STARTCMD="redis-server"
+
+[[ "${REDIS_PROTECTED}" == "true" || "${REDIS_PROTECTED}" == "1" ]] && STARTCMD="${STARTCMD} --protected-mode yes"
+[[ "${REDIS_PROTECTED}" == "false" || "${REDIS_PROTECTED}" == "0" ]] && STARTCMD="${STARTCMD} --protected-mode no"
+[[ -n "${REDIS_BACKLOG}" ]] && STARTCMD="${STARTCMD} --tcp-backlog ${REDIS_BACKLOG}"
+[[ -n "${REDIS_KEEPALIVE}" ]] && STARTCMD="${STARTCMD} --tcp-keepalive ${REDIS_KEEPALIVE}"
+[[ -n "${REDIS_TIMEOUT}" ]] && STARTCMD="${STARTCMD} --timeout ${REDIS_TIMEOUT}"
+[[ -n "${REDIS_LOGLEVEL}" ]] && STARTCMD="${STARTCMD} --loglevel ${REDIS_LOGLEVEL}"
+[[ -n "${REDIS_DATABASES}" ]] && STARTCMD="${STARTCMD} --databases ${REDIS_DATABASES}"
+[[ -n "${REDIS_MAXCONN}" ]] && STARTCMD="${STARTCMD} --maxclients ${REDIS_MAXCONN}"
+[[ -n "${REDIS_NOTIFYKS}" ]] && STARTCMD="${STARTCMD} --notify-keyspace-events ${REDIS_NOTIFYKS}"
+[[ -n "${REDIS_OPTS}" ]] && STARTCMD="${STARTCMD} ${REDIS_OPTS}"
+
+pushd /var/lib/redis > /dev/null
+  echo "> starting redis service"
+  exec ${STARTCMD}
+popd > /dev/null

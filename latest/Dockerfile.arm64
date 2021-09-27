@@ -1,4 +1,4 @@
-FROM webhippie/alpine:latest-amd64
+FROM webhippie/alpine:latest-arm64
 
 VOLUME ["/var/lib/redis"]
 EXPOSE 6379

@@ -29,3 +29,5 @@ declare -x REDIS_OPTS
 
 declare -x REDIS_SKIP_CHOWN
 [[ -z "${REDIS_SKIP_CHOWN}" ]] && REDIS_SKIP_CHOWN="false"
+
+true

@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -eo pipefail
+source /usr/bin/entrypoint
 
 CHECK="$(redis-cli -h 127.0.0.1 ping 2>/dev/null)"
 
-if [[ "${CHECK}" == "PONG" ]]
-then
-  exit 0
+if [[ "${CHECK}" == "PONG" ]]; then
+    exit 0
 fi
 
 exit 1

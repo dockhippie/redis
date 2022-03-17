@@ -1,4 +1,4 @@
-FROM webhippie/alpine:latest-amd64@sha256:243a706fb7943f39c8d1570485bbd4720f453b378dbf17b3c7238b99cddac16f
+FROM webhippie/alpine:latest-amd64@sha256:c4cf63aa5e770d2cb9df2d2b2d417ec3773405dd2b2afb53ac70ed3ee3c982e2
 
 VOLUME ["/var/lib/redis"]
 EXPOSE 6379

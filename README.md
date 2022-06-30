@@ -1,20 +1,23 @@
 # redis
 
-[![Docker Build](https://github.com/dockhippie/redis/workflows/docker/badge.svg)](https://github.com/dockhippie/redis/actions?query=workflow%3Adocker) [![Readme Build](https://github.com/dockhippie/redis/workflows/readme/badge.svg)](https://github.com/dockhippie/redis/actions?query=workflow%3Areadme) [![Docker Size](https://img.shields.io/docker/image-size/webhippie/redis/latest)](#) [![Docker Pulls](https://img.shields.io/docker/pulls/webhippie/redis)](https://hub.docker.com/r/webhippie/redis) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/redis)
+[![Docker Build](https://github.com/dockhippie/redis/actions/workflows/docker.yml/badge.svg)](https://github.com/dockhippie/redis/actions/workflows/docker.yml) [![GitHub Repo](https://img.shields.io/badge/github-repo-yellowgreen)](https://github.com/dockhippie/redis)
 
-These are docker images for [Redis](http://redis.io) running on our [Alpine Linux image](https://github.com/dockhippie/alpine).
+These are docker images for [Redis][upstream] running on our
+[Alpine Linux image][parent].
 
 ## Versions
 
-For the available versions please look at [Docker Hub](https://hub.docker.com/r/webhippie/redis/tags) or [Quay](https://quay.io/repository/webhippie/redis?tab=tags) or check the existing folders within the [GitHub repository](https://github.com/dockhippie/redis).
+For the available versions please look at [Docker Hub][dockerhub] or
+[Quay][quayio] or check the existing folders within the
+[GitHub repository][github].
 
 ## Volumes
 
-* /var/lib/redis
+*  /var/lib/redis
 
 ## Ports
 
-* 6379
+*  6379
 
 ## Available environment variables
 
@@ -52,3 +55,9 @@ MIT
 ```console
 Copyright (c) 2015 Thomas Boerger <http://www.webhippie.de>
 ```
+
+[upstream]: http://redis.io
+[parent]: https://github.com/dockhippie/alpine
+[dockerhub]: https://hub.docker.com/r/webhippie/redis/tags
+[quayio]: https://quay.io/repository/webhippie/redis?tab=tags
+[github]: https://github.com/dockhippie/redis

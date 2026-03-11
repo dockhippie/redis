@@ -1,7 +1,7 @@
 ---
 repository:
   name: redis
-  description: Docker images for redis
+  description: Docker images for Redis
   topics: docker, image
 
   private: false
